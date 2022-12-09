@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import Footer from "./shared/footer";
 import Navbar from "./shared/navbar";
 
 export default function Home() {
@@ -17,38 +18,26 @@ export default function Home() {
         />
       </Head>
       <Navbar />
-      <main className="w-full h-full px-10">
-        <div className=" flex flex-col justify-center items-center ">
-          <div className=" w-full h-[600px]  bg-indigo-500 rounded-md  ">
+      <main className="w-full h-full ">
+        <div className=" flex flex-col justify-center items-center  ">
+          <div id="home" className=" w-full h-screen pt-40 ">
+            <p className=" text-black">home</p>
+          </div>
+          <div id="about" className=" w-full h-screen   ">
             <p className=" text-black">about</p>
           </div>
-
-          <div
-            id="about"
-            className=" w-full h-[400px] bg-blue-400 rounded-md  "
-          >
-            <p className=" text-black">about</p>
-          </div>
-          <div
-            id="skills"
-            className=" w-full h-[400px]  bg-red-300 rounded-md  "
-          >
+          <div id="skills" className=" w-full h-screen    ">
             <p className=" text-black">skills</p>
           </div>
-          <div
-            id="projects"
-            className=" w-full h-[400px]  bg-lime-300 rounded-md  "
-          >
+          <div id="projects" className=" w-full h-screen   ">
             <p className=" text-black">projects</p>
           </div>
-          <div
-            id="contact"
-            className=" w-full h-[400px] bg-orange-300 rounded-md "
-          >
+          <div id="contact" className=" w-full h-screen  ">
             <p className=" text-black">contact</p>
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

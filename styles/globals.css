@@ -30,3 +30,13 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #2196f3; 
 }
+
+
+.page-logo{
+  transition: transform .7s ease-in-out;
+}
+
+.page-logo:hover {
+  transform: rotate(360deg);
+}
+
