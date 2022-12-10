@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import Projects from "./components/projects";
 import Footer from "./shared/footer";
 import Navbar from "./shared/navbar";
 
@@ -29,9 +30,7 @@ export default function Home() {
           <div id="skills" className=" w-full h-screen    ">
             <p className=" text-black">skills</p>
           </div>
-          <div id="projects" className=" w-full h-screen   ">
-            <p className=" text-black">projects</p>
-          </div>
+          <Projects />
           <div id="contact" className=" w-full h-screen  ">
             <p className=" text-black">contact</p>
           </div>
