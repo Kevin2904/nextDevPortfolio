@@ -7,13 +7,13 @@ export default function Navbar() {
   const closeMenu = () => setClick(false);
 
   return (
-    <nav className="w-full  bg-blue-900 shadow  fixed top-0 ">
+    <nav className="w-full  bg-blue-900 shadow  fixed top-0  z-50">
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
-          <div className="flex items-center justify-between py-3 md:py-5 md:block cursor-pointer ">
+          <div className="flex items-center justify-between py-3 md:py-5 md:block cursor-pointer  ">
             <div className="page-logo">
               <Link
-                to="home"
+                to="about"
                 spy={true}
                 smooth={true}
                 offset={-100}

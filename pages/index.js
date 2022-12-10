@@ -21,11 +21,16 @@ export default function Home() {
       <Navbar />
       <main className="w-full h-full ">
         <div className=" flex flex-col justify-center items-center  ">
-          <div id="home" className=" w-full h-screen pt-40 ">
-            <p className=" text-black">home</p>
-          </div>
-          <div id="about" className=" w-full h-screen   ">
-            <p className=" text-black">about</p>
+          <div id="about" className=" w-full h-screen  pt-40 ">
+            <div className="title bg-cyan-300 w-fit px-10 py-5">
+              <h1 className=" text-black  text-2xl ">About</h1>
+              <p>My name is Kevin and I'm a web developer</p>
+            </div>
+
+            <div className="about bg-cyan-500 w-fit px-10 py-5 ml-20">
+              <p>This is my new portfolio prototype</p>
+              <p>as you may notice</p>
+            </div>
           </div>
           <div id="skills" className=" w-full h-screen    ">
             <p className=" text-black">skills</p>
