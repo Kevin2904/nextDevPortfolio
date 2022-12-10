@@ -1,4 +1,3 @@
-import Link from "next/link";
 import React, { useState } from "react";
 export default function Projects() {
   const [showMore, setShowMore] = useState(false);

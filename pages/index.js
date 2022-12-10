@@ -24,7 +24,7 @@ export default function Home() {
           <div id="about" className=" w-full h-screen  pt-40 ">
             <div className="title bg-cyan-300 w-fit px-10 py-5">
               <h1 className=" text-black  text-2xl ">About</h1>
-              <p>My name is Kevin and I'm a web developer</p>
+              <p>My name is Kevin and Im a web developer</p>
             </div>
 
             <div className="about bg-cyan-500 w-fit px-10 py-5 ml-20">
