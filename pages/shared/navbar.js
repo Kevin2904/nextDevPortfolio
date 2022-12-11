@@ -7,7 +7,7 @@ export default function Navbar() {
   const closeMenu = () => setClick(false);
 
   return (
-    <nav className="w-full  bg-blue-900 shadow  fixed top-0  z-50">
+    <nav className="w-full  bg-blue-900   fixed top-0  z-50 shadow-lg shadow-blue-500/50">
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block cursor-pointer  ">
@@ -72,17 +72,23 @@ export default function Navbar() {
         <div
           className={` ${
             navbar
-              ? "opacity-100 transition-height duration-1000 ease-in-out  h-fit portrait:pb-10 "
-              : " 2xl:opacity-100 xl:opacity-100  lg:opacity-100  md:opacity-100   sm:opacity-0  transition-height duration-1000 ease-in-out"
+              ? "transition-height duration-1000 ease-in-out  h-fit portrait:pb-10 "
+              : "  transition-height duration-1000 ease-in-out"
           }`}
         >
           <div
-            className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0   ${
-              navbar ? "block " : "hidden"
+            className={`flex-1 justify-self-center   md:block md:pb-0 md:mt-0 portrait:overflow-hidden   ${
+              navbar
+                ? " transition-height duration-1000 ease-in-out portrait:h-64 "
+                : "transition-height duration-1000 ease-in-out h-0"
             }`}
           >
-            <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0 text-lg ">
-              <li className="text-white portrait:hover:text-2xl  cursor-pointer px-2 rounded-md h-10 flex  items-center w-fit portrait:font-bold">
+            <ul
+              className={`items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0 text-lg ${
+                navbar ? "block " : "hidden  "
+              }`}
+            >
+              <li className="text-white portrait:hover:text-2xl hover-underline-animation  cursor-pointer px-2 rounded-md h-10 flex  items-center w-fit portrait:font-bold">
                 <Link
                   to="about"
                   spy={true}
@@ -94,7 +100,7 @@ export default function Navbar() {
                   About
                 </Link>
               </li>
-              <li className="text-white portrait:hover:text-2xl cursor-pointer px-2 rounded-md h-10 flex  items-center w-fit portrait:font-bold">
+              <li className="text-white portrait:hover:text-2xl hover-underline-animation cursor-pointer px-2 rounded-md h-10 flex  items-center w-fit portrait:font-bold">
                 <Link
                   to="skills"
                   spy={true}
@@ -106,7 +112,7 @@ export default function Navbar() {
                   Skills
                 </Link>
               </li>
-              <li className="text-white portrait:hover:text-2xl cursor-pointer px-2 rounded-md h-10 flex  items-center w-fit portrait:font-bold">
+              <li className="text-white portrait:hover:text-2xl hover-underline-animation cursor-pointer px-2 rounded-md h-10 flex  items-center w-fit portrait:font-bold">
                 <Link
                   to="projects"
                   spy={true}
@@ -118,7 +124,7 @@ export default function Navbar() {
                   Projects
                 </Link>
               </li>
-              <li className="text-white portrait:hover:text-2xl cursor-pointer px-2 rounded-md h-10 flex  items-center w-fit portrait:font-bold">
+              <li className="text-white portrait:hover:text-2xl hover-underline-animation cursor-pointer px-2 rounded-md h-10 flex  items-center w-fit portrait:font-bold">
                 <Link
                   to="contact"
                   spy={true}
@@ -144,3 +150,57 @@ export default function Navbar() {
 //https://anuraghazra.dev/#creative-coding
 
 //animate-bounce
+
+/*
+
+ <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0 text-lg ">
+              <li className="text-white portrait:hover:text-2xl hover-underline-animation  cursor-pointer px-2 rounded-md h-10 flex  items-center w-fit portrait:font-bold">
+                <Link
+                  to="about"
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={500}
+                  onClick={closeMenu}
+                >
+                  About
+                </Link>
+              </li>
+              <li className="text-white portrait:hover:text-2xl hover-underline-animation cursor-pointer px-2 rounded-md h-10 flex  items-center w-fit portrait:font-bold">
+                <Link
+                  to="skills"
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={500}
+                  onClick={closeMenu}
+                >
+                  Skills
+                </Link>
+              </li>
+              <li className="text-white portrait:hover:text-2xl hover-underline-animation cursor-pointer px-2 rounded-md h-10 flex  items-center w-fit portrait:font-bold">
+                <Link
+                  to="projects"
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={500}
+                  onClick={closeMenu}
+                >
+                  Projects
+                </Link>
+              </li>
+              <li className="text-white portrait:hover:text-2xl hover-underline-animation cursor-pointer px-2 rounded-md h-10 flex  items-center w-fit portrait:font-bold">
+                <Link
+                  to="contact"
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={500}
+                  onClick={closeMenu}
+                >
+                  Contact
+                </Link>
+              </li>
+            </ul>
+*/

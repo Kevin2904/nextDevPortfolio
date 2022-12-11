@@ -25,8 +25,8 @@ export default function Projects() {
     <div
       id="projects"
       className={`${
-        showMore ? " h-[1000px]" : " h-[500px]"
-      } bg-slate-400 w-full justify-center items-center flex overflow-hidden transition-height duration-1000 ease-in-out relative`}
+        showMore ? " h-[1100px]" : " h-[500px]"
+      } bg-[#02072f] w-full justify-center items-center flex overflow-hidden transition-height duration-1000 ease-in-out relative`}
     >
       <div className=" absolute top-0 py-10">
         <div className=" w-full flex justify-center items-center text-white text-2xl font-bold">
@@ -210,7 +210,7 @@ export default function Projects() {
         </div>
       </div>
 
-      <div className=" absolute bottom-0 bg-gradient-to-t from-white w-full flex justify-center items-center h-32">
+      <div className=" absolute bottom-0 bg-gradient-to-t from-[#02072f] w-full flex justify-center items-center h-32">
         <button
           className=" bg-sky-400 rounded-full h-14 w-32 leading-4 font-bold text-white show-more"
           onClick={() => setShowMore(!showMore)}

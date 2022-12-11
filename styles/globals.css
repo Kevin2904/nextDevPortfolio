@@ -58,17 +58,38 @@ body {
 
 
 .title {
-  animation: 4s fadeIn;
+  animation: 8s fadeIn;
   animation-fill-mode: forwards;
   
   visibility: hidden;
 }
 
+
+
+
 .about {
-  animation: 8s fadeIn;
+  position: relative;
+  animation-name: example;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-delay: 0.5s;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
   animation-fill-mode: forwards;
-  
   visibility: hidden;
+  top:-50px;
+}
+
+@keyframes example {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+  0%  { top:-150px;}
+  25%  {top:-50px;}
 }
 
 @keyframes fadeIn {
@@ -80,3 +101,88 @@ body {
     opacity: 1;
   }
 }
+
+
+.skills svg{
+    height: 50px;
+    width: 100px;
+}
+
+
+
+
+
+
+
+@media screen and (orientation:landscape){
+  .hover-underline-animation {
+    position: relative;
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+  
+  .hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 4px;
+    bottom: 0;
+    left: 0;
+    background-color: #2196f3;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  } 
+  }
+
+
+
+  .icon-bar {
+    position: fixed;
+    top: 90%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    right: 0%;
+  }
+  
+  .icon-bar a {
+    display: block;
+    text-align: center;
+    transition: all 0.3s ease;
+    color: white;
+  }
+  
+
+  
+  
+.wrapper {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.marquee {
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-flex;
+  animation: marquee 30s linear infinite;
+}
+
+.marquee div {
+  display:inline-flex;
+}
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+ 

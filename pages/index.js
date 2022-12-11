@@ -2,7 +2,9 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import About from "./components/about";
 import Projects from "./components/projects";
+import Skills from "./components/skills";
 import Footer from "./shared/footer";
 import Navbar from "./shared/navbar";
 
@@ -19,26 +21,29 @@ export default function Home() {
         />
       </Head>
       <Navbar />
-      <main className="w-full h-full ">
-        <div className=" flex flex-col justify-center items-center  ">
-          <div id="about" className=" w-full h-screen  pt-40 ">
-            <div className="title bg-cyan-300 w-fit px-10 py-5">
-              <h1 className=" text-black  text-2xl ">About</h1>
-              <p>My name is Kevin and Im a web developer</p>
-            </div>
+      <main className="w-full h-full pt-20">
+        <About />
 
-            <div className="about bg-cyan-500 w-fit px-10 py-5 ml-20">
-              <p>This is my new portfolio prototype</p>
-              <p>as you may notice</p>
-            </div>
-          </div>
-          <div id="skills" className=" w-full h-screen    ">
-            <p className=" text-black">skills</p>
-          </div>
-          <Projects />
-          <div id="contact" className=" w-full h-screen  ">
-            <p className=" text-black">contact</p>
-          </div>
+        <Skills />
+
+        <Projects />
+        <div id="contact" className=" w-full h-screen bg-[#02072f]  ">
+          <p className=" text-black">contact</p>
+        </div>
+
+        <div className="icon-bar bg-white py-2 px-2 rounded-md ">
+          <Link href="#" className="mb-2">
+            <img
+              src="assets/icons/twitter.png"
+              className=" w-10 h-10 animate-waving-hand ease-in-out"
+            />
+          </Link>
+          <Link href="#" className="">
+            <img
+              src="assets/icons/linkedin.png"
+              className=" w-10 h-10 animate-waving-hand ease-in-out"
+            />
+          </Link>
         </div>
       </main>
       <Footer />
