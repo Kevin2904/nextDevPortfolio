@@ -51,8 +51,8 @@ export default function About() {
           </div>
           <div className=" border-sky-500 border-l-4 ml-20 pl-5 w-[500px] text-lg">
             <p>
-              Since high school when I took graphic design classes I've felt
-              special interest in{" "}
+              Since high school when I took graphic design classes I&apos;ve
+              felt special interest in{" "}
               <span className="underline decoration-2 decoration-[#2196f3]">
                 front-end development
               </span>{" "}
@@ -64,7 +64,7 @@ export default function About() {
               <span className="underline decoration-2 decoration-[#2196f3]">
                 videogames
               </span>
-              . Today I'm a{" "}
+              . Today I&apos;m a{" "}
               <span className="underline decoration-2 decoration-[#2196f3]">
                 developer
               </span>{" "}
