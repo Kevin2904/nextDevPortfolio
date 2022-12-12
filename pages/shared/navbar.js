@@ -83,11 +83,7 @@ export default function Navbar() {
                 : "transition-height duration-1000 ease-in-out h-0"
             }`}
           >
-            <ul
-              className={`items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0 text-lg ${
-                navbar ? "block " : "hidden  "
-              }`}
-            >
+            <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0 text-lg">
               <li className="text-white portrait:hover:text-2xl hover-underline-animation  cursor-pointer px-2 rounded-md h-10 flex  items-center w-fit portrait:font-bold">
                 <Link
                   to="about"

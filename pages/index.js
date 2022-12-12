@@ -34,6 +34,12 @@ export default function Home() {
         <div className="icon-bar bg-white py-2 px-2 rounded-md ">
           <Link href="#" className="mb-2">
             <img
+              src="assets/icons/github.png"
+              className=" w-10 h-10 animate-waving-hand ease-in-out"
+            />
+          </Link>
+          <Link href="#" className="mb-2">
+            <img
               src="assets/icons/twitter.png"
               className=" w-10 h-10 animate-waving-hand ease-in-out"
             />
