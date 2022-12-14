@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SkillsSliderContent from "./skillsSliderContent";
 
-export default function SkillsCard() {
+export default function SkillsCard(props) {
+  const { content } = props;
   const [isRotated, setIsRotated] = useState(false);
   const onRotate = () => {
     setIsRotated(!isRotated);
   };
+
   return (
     <div className={`${isRotated ? "rotated" : ""} card relative`}>
       <div
@@ -13,24 +15,24 @@ export default function SkillsCard() {
       >
         <div className="  absolute">
           <div className=" flex flex-col w-full justify-center items-center bg-white py-5">
-            <img src="assets/icons/frontEnd.svg" className=" w-20 h-20"></img>
-            <h2 className=" text-[#1f3a8a] font-bold text-xl">Front-end</h2>
+            <img src={content[0]?.icon} className=" w-20 h-20"></img>
+            <h2 className=" text-[#1f3a8a] font-bold text-xl">
+              {content[0]?.title}
+            </h2>
           </div>
 
           <div className="text-white flex w-full flex-col text-left px-10 mt-5">
-            <p>
-              Application development ensuring intuitive and responsive
-              interfaces.
-            </p>
+            <p>{content[0]?.front[0]?.text}</p>
             <p className="  text-lg font-bold mt-5">Experience: </p>
 
             <ul>
-              <li>
-                <p>Websites developed according to client requirements.</p>
-              </li>
-              <li>
-                <p>Bug fixing and development of new functionalities.</p>
-              </li>
+              {content[0]?.front[0]?.experience?.map((resp, i) => {
+                return (
+                  <li key={i}>
+                    <p>{resp}</p>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>
@@ -55,27 +57,13 @@ export default function SkillsCard() {
 
           <div className="text-white flex w-full flex-col text-left px-10 mt-5">
             <ul>
-              <li>
-                <p>ReactJS</p>
-              </li>
-              <li>
-                <p>NextJS</p>
-              </li>
-              <li>
-                <p>Angular</p>
-              </li>
-              <li>
-                <p>.NET Core 6 (MVC)</p>
-              </li>
-              <li>
-                <p>Tailwind</p>
-              </li>
-              <li>
-                <p>Bootstrap</p>
-              </li>
-              <li>
-                <p>CSS</p>
-              </li>
+              {content[0]?.back?.map((resp, i) => {
+                return (
+                  <li>
+                    <p>{resp}</p>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>

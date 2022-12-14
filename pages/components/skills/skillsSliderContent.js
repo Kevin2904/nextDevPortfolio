@@ -10,7 +10,7 @@ export default function SkillsSliderContent() {
       <SkillItem skill="Bootstrap" />
       <SkillItem skill="NextJS" />
       <SkillItem skill=".NET" />
-      <SkillItem skill="SQLServer" />
+      <SkillItem skill="SQL Server" />
       <SkillItem skill="OracleDB" />
       <SkillItem skill="Javascript" />
       <SkillItem skill="Typescript" />
