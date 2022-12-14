@@ -14,7 +14,7 @@ export default function SkillsCard(props) {
   };
 
   return (
-    <div className={`${isRotated ? "rotated" : ""} card relative`}>
+    <div className={`${isRotated ? "rotated" : ""} card relative `}>
       <div
         className={` front bg-[#1f3a8a] w-full h-[450px] rounded-md flex pb-10 justify-start items-center flex-col absolute `}
       >

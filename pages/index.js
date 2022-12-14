@@ -7,8 +7,26 @@ import Projects from "./components/projects";
 import Skills from "./components/skills";
 import Footer from "./shared/footer";
 import Navbar from "./shared/navbar";
+import Router from "next/router";
 
 export default function Home() {
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    setTimeout(function () {
+      Router.events.on("routeChangeStart", () => setLoading(true));
+      Router.events.on("routeChangeComplete", () => setLoading(false));
+      Router.events.on("routeChangeError", () => setLoading(false));
+    }, 3000);
+
+    return () => {
+      setTimeout(function () {
+        Router.events.off("routeChangeStart", () => setLoading(true));
+        Router.events.off("routeChangeComplete", () => setLoading(false));
+        Router.events.off("routeChangeError", () => setLoading(false));
+      }, 3000);
+    };
+  }, [Router.events]);
+
   return (
     <div>
       <Head>
@@ -20,39 +38,47 @@ export default function Home() {
         "
         />
       </Head>
-      <Navbar />
-      <main className="w-full h-full pt-20">
-        <About />
 
-        <Skills />
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <>
+          {" "}
+          <Navbar />
+          <main className="w-full h-full pt-20">
+            <About />
 
-        <Projects />
-        <div id="contact" className=" w-full h-screen bg-[#02072f]  ">
-          <p className=" text-black">contact</p>
-        </div>
+            <Skills />
 
-        <div className="icon-bar bg-white py-2 px-2 rounded-md ">
-          <Link href="#" className="mb-2">
-            <img
-              src="assets/icons/github.png"
-              className=" w-10 h-10 animate-waving-hand ease-in-out"
-            />
-          </Link>
-          <Link href="#" className="mb-2">
-            <img
-              src="assets/icons/twitter.png"
-              className=" w-10 h-10 animate-waving-hand ease-in-out"
-            />
-          </Link>
-          <Link href="#" className="">
-            <img
-              src="assets/icons/linkedin.png"
-              className=" w-10 h-10 animate-waving-hand ease-in-out"
-            />
-          </Link>
-        </div>
-      </main>
-      <Footer />
+            <Projects />
+            <div id="contact" className=" w-full h-screen bg-[#02072f]  ">
+              <p className=" text-black">contact</p>
+            </div>
+
+            <div className="icon-bar bg-white py-2 px-2 rounded-md ">
+              <Link href="#" className="mb-2">
+                <img
+                  src="assets/icons/github.png"
+                  className=" w-10 h-10 animate-waving-hand ease-in-out"
+                />
+              </Link>
+              <Link href="#" className="mb-2">
+                <img
+                  src="assets/icons/twitter.png"
+                  className=" w-10 h-10 animate-waving-hand ease-in-out"
+                />
+              </Link>
+              <Link href="#" className="">
+                <img
+                  src="assets/icons/linkedin.png"
+                  className=" w-10 h-10 animate-waving-hand ease-in-out"
+                />
+              </Link>
+            </div>
+          </main>
+          <Footer />
+        </>
+      )}
     </div>
   );
 }
