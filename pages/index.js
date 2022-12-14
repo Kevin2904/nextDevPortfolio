@@ -7,25 +7,22 @@ import Projects from "./components/projects";
 import Skills from "./components/skills";
 import Footer from "./shared/footer";
 import Navbar from "./shared/navbar";
-import Router from "next/router";
 
 export default function Home() {
   const [loading, setLoading] = useState(false);
+  const [windowState, setWindowState] = useState(undefined);
   useEffect(() => {
-    setTimeout(function () {
-      Router.events.on("routeChangeStart", () => setLoading(true));
-      Router.events.on("routeChangeComplete", () => setLoading(false));
-      Router.events.on("routeChangeError", () => setLoading(false));
-    }, 3000);
+    console.log(loading);
+  }, [loading]);
 
-    return () => {
-      setTimeout(function () {
-        Router.events.off("routeChangeStart", () => setLoading(true));
-        Router.events.off("routeChangeComplete", () => setLoading(false));
-        Router.events.off("routeChangeError", () => setLoading(false));
-      }, 3000);
-    };
-  }, [Router.events]);
+  useEffect(() => {
+    setWindowState(typeof windowState);
+    if (typeof windowState !== "undefined") {
+      setLoading(false);
+    } else {
+      setLoading(true);
+    }
+  }, [windowState]);
 
   return (
     <div>
@@ -38,12 +35,10 @@ export default function Home() {
         "
         />
       </Head>
-
       {loading ? (
         <p>Loading...</p>
       ) : (
         <>
-          {" "}
           <Navbar />
           <main className="w-full h-full pt-20">
             <About />
@@ -82,3 +77,11 @@ export default function Home() {
     </div>
   );
 }
+
+/*
+
+<>
+          {" "}
+         
+        </>
+*/

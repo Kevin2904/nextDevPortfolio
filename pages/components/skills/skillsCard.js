@@ -6,7 +6,6 @@ export default function SkillsCard(props) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    console.log(content);
     setData(content);
   }, []);
   const onRotate = () => {
