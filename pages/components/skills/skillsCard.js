@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from "react";
-import SkillsSliderContent from "./skillsSliderContent";
 
 export default function SkillsCard(props) {
   const { content } = props;
   const [isRotated, setIsRotated] = useState(false);
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    console.log(content);
+    setData(content);
+  }, []);
   const onRotate = () => {
     setIsRotated(!isRotated);
   };
@@ -15,18 +20,18 @@ export default function SkillsCard(props) {
       >
         <div className="  absolute">
           <div className=" flex flex-col w-full justify-center items-center bg-white py-5">
-            <img src={content[0]?.icon} className=" w-20 h-20"></img>
+            <img src={data[0]?.icon} className=" w-20 h-20"></img>
             <h2 className=" text-[#1f3a8a] font-bold text-xl">
-              {content[0]?.title}
+              {data[0]?.title}
             </h2>
           </div>
 
           <div className="text-white flex w-full flex-col text-left px-10 mt-5">
-            <p>{content[0]?.front[0]?.text}</p>
+            <p>{data[0]?.front[0]?.text}</p>
             <p className="  text-lg font-bold mt-5">Experience: </p>
 
             <ul>
-              {content[0]?.front[0]?.experience?.map((resp, i) => {
+              {data[0]?.front[0]?.experience?.map((resp, i) => {
                 return (
                   <li key={i}>
                     <p>{resp}</p>
@@ -57,9 +62,9 @@ export default function SkillsCard(props) {
 
           <div className="text-white flex w-full flex-col text-left px-10 mt-5">
             <ul>
-              {content[0]?.back?.map((resp, i) => {
+              {data[0]?.back?.map((resp, i) => {
                 return (
-                  <li>
+                  <li key={i}>
                     <p>{resp}</p>
                   </li>
                 );
