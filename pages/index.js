@@ -18,7 +18,9 @@ export default function Home() {
   useEffect(() => {
     setWindowState(typeof windowState);
     if (typeof windowState !== "undefined") {
-      setLoading(false);
+      setTimeout(function () {
+        setLoading(false);
+      }, 2000);
     } else {
       setLoading(true);
     }
