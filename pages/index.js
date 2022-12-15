@@ -38,7 +38,7 @@ export default function Home() {
         "
         />
       </Head>
-      {loading ? (
+      {true ? (
         <Splash />
       ) : (
         <>
