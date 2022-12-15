@@ -7,6 +7,7 @@ import Projects from "./components/projects";
 import Skills from "./components/skills";
 import Footer from "./shared/footer";
 import Navbar from "./shared/navbar";
+import Splash from "./shared/splash";
 
 export default function Home() {
   const [loading, setLoading] = useState(false);
@@ -38,7 +39,7 @@ export default function Home() {
         />
       </Head>
       {loading ? (
-        <p>Loading...</p>
+        <Splash />
       ) : (
         <>
           <Navbar />
