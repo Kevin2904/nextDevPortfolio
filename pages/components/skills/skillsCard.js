@@ -13,12 +13,12 @@ export default function SkillsCard(props) {
   };
 
   return (
-    <div className={`${isRotated ? "rotated" : ""} card relative `}>
+    <div className={`${isRotated ? "rotated" : ""} card relative h-[450px] `}>
       <div
-        className={` front bg-[#1f3a8a] w-full h-[450px] rounded-md flex pb-10 justify-start items-center flex-col absolute `}
+        className={` front bg-gradient-to-b from-[#2196f3] border-2 border-[#2196f3]  w-full h-[450px] rounded-md flex pb-10 justify-start items-center flex-col absolute `}
       >
         <div className="  absolute">
-          <div className=" flex flex-col w-full justify-center items-center bg-white py-5">
+          <div className=" flex flex-col w-full justify-center items-center bg-white py-5 ">
             <img src={data[0]?.icon} className=" w-20 h-20"></img>
             <h2 className=" text-[#1f3a8a] font-bold text-xl">
               {data[0]?.title}
@@ -42,16 +42,16 @@ export default function SkillsCard(props) {
         </div>
 
         <button
-          className=" w-32 text-left px-5 h-10 bg-[#2196f3] mb-5 rounded-full text-white absolute bottom-0"
+          className=" w-32 text-left px-5 h-10 bg-white text-[#072966] mb-5 rounded-full  font-bold absolute bottom-0"
           onClick={onRotate}
         >
-          Details
+          Stack
           <img src="assets/icons/arrow.svg" className=" float-right  w-7"></img>
         </button>
       </div>
 
       <div
-        className={` back bg-[#1f3a8a] w-full h-[450px] rounded-md flex pb-10 justify-start items-center flex-col absolute `}
+        className={` back bg-gradient-to-b from-[#2196f3] border-2 border-[#2196f3]  w-full h-[450px] rounded-md flex pb-10 justify-start items-center flex-col absolute `}
       >
         <div className="  absolute w-full ">
           <div className=" flex flex-col w-full justify-center items-center h-14 bg-white">
@@ -75,7 +75,7 @@ export default function SkillsCard(props) {
         <div className=" absolute bottom-0 w-full">
           <div className=" w-full flex justify-center items-center bg-white">
             <button
-              className=" w-32 text-left px-5 h-10 bg-[#2196f3] mb-5 rounded-full text-white absolute bottom-0"
+              className=" w-32 text-left px-5 h-10 bg-white mb-5 rounded-full text-[#072966] font-bold absolute bottom-0"
               onClick={onRotate}
             >
               Back
@@ -85,7 +85,6 @@ export default function SkillsCard(props) {
               ></img>
             </button>
           </div>
-          <img src="assets/images/cardWave2.svg" className=" w-full"></img>
         </div>
       </div>
     </div>

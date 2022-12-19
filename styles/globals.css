@@ -70,7 +70,7 @@ body {
 .about {
   position: relative;
   animation-name: example;
-  animation-duration: 5s;
+  animation-duration: 2s;
   animation-timing-function: linear;
   animation-delay: 0.5s;
   animation-iteration-count: 1;
@@ -135,6 +135,11 @@ body {
   }
   
   .hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  } 
+
+  .hover-underline-animation-click::after {
     transform: scaleX(1);
     transform-origin: bottom left;
   } 
@@ -260,6 +265,30 @@ li {
  60%  {left:calc(100% - 8px)}
  80%,
  100% {left:100%}
+}
+
+
+textarea {
+  resize: none;
+}
+
+
+
+
+.object {
+  animation: MoveUpDown 1s linear infinite;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+@keyframes MoveUpDown {
+  0%, 100% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 12px;
+  }
 }
 
 

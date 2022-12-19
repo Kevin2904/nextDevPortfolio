@@ -1,13 +1,20 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Link } from "react-scroll";
 import { useState } from "react";
 export default function Navbar() {
   const [navbar, setNavbar] = useState(false);
   const [click, setClick] = useState(false);
-  const closeMenu = () => setClick(false);
+  const [current, setCurrent] = useState("aboutPage");
+  //const closeMenu = () => setClick(false);
+  const handleClick = (e) => {
+    console.log(e.target.className);
+    let item = e.target.className;
+    setCurrent(item.trim());
+    setClick(false);
+  };
 
   return (
-    <nav className="w-full  bg-blue-900   fixed top-0  z-50 shadow-lg shadow-blue-500/50">
+    <nav className="w-full  bg-blue-900   fixed top-0  z-50 ">
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block cursor-pointer  ">
@@ -18,11 +25,11 @@ export default function Navbar() {
                 smooth={true}
                 offset={-100}
                 duration={500}
-                onClick={closeMenu}
+                onClick={handleClick}
               >
                 <img
                   src="/assets/icons/pageIco.png"
-                  className="xl:py-0 lg:py-0 md:py-0 sm:py-2 py-2"
+                  className="aboutPageIcon"
                 ></img>
               </Link>
             </div>
@@ -72,62 +79,84 @@ export default function Navbar() {
         <div
           className={` ${
             navbar
-              ? "transition-height duration-1000 ease-in-out  h-fit portrait:pb-10 "
+              ? "transition-height duration-1000 ease-in-out  h-fit xl:pb-0 lg:pb-0 md:pb-0 sm:pb-10 pb-10 "
               : "  transition-height duration-1000 ease-in-out"
           }`}
         >
           <div
-            className={`flex-1 justify-self-center   md:block md:pb-0 md:mt-0 portrait:overflow-hidden   ${
+            className={`flex-1 justify-self-center   md:block md:pb-0 md:mt-0 xl:overflow-visible lg:overflow-visible md:overflow-hidden sm:overflow-hidden overflow-hidden   ${
               navbar
                 ? " transition-height duration-1000 ease-in-out portrait:h-64 "
                 : "transition-height duration-1000 ease-in-out h-0"
             }`}
           >
             <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0 text-lg">
-              <li className="text-white portrait:hover:text-2xl hover-underline-animation  cursor-pointer px-2 rounded-md h-10 flex  items-center w-fit portrait:font-bold">
+              <li
+                className={` ${
+                  current == "aboutPage" || current == "aboutPageIcon" ? "" : ""
+                } text-white portrait:hover:text-2xl hover-underline-animation  cursor-pointer px-2 rounded-md h-10 flex  items-center w-fit portrait:font-bold`}
+              >
                 <Link
                   to="about"
                   spy={true}
                   smooth={true}
                   offset={-100}
                   duration={500}
-                  onClick={closeMenu}
+                  onClick={(e) => {
+                    handleClick(e);
+                  }}
+                  className="aboutPage"
                 >
                   About
                 </Link>
               </li>
-              <li className="text-white portrait:hover:text-2xl hover-underline-animation cursor-pointer px-2 rounded-md h-10 flex  items-center w-fit portrait:font-bold">
+              <li
+                className={` ${
+                  current == "skillsPage" ? "" : ""
+                } text-white portrait:hover:text-2xl hover-underline-animation  cursor-pointer px-2 rounded-md h-10 flex  items-center w-fit portrait:font-bold`}
+              >
                 <Link
                   to="skills"
                   spy={true}
                   smooth={true}
                   offset={-100}
                   duration={500}
-                  onClick={closeMenu}
+                  onClick={handleClick}
+                  className="skillsPage"
                 >
                   Skills
                 </Link>
               </li>
-              <li className="text-white portrait:hover:text-2xl hover-underline-animation cursor-pointer px-2 rounded-md h-10 flex  items-center w-fit portrait:font-bold">
+              <li
+                className={` ${
+                  current == "projectsPage" ? "" : ""
+                } text-white portrait:hover:text-2xl hover-underline-animation  cursor-pointer px-2 rounded-md h-10 flex  items-center w-fit portrait:font-bold`}
+              >
                 <Link
                   to="projects"
                   spy={true}
                   smooth={true}
                   offset={-100}
                   duration={500}
-                  onClick={closeMenu}
+                  onClick={handleClick}
+                  className="projectsPage"
                 >
                   Projects
                 </Link>
               </li>
-              <li className="text-white portrait:hover:text-2xl hover-underline-animation cursor-pointer px-2 rounded-md h-10 flex  items-center w-fit portrait:font-bold">
+              <li
+                className={` ${
+                  current == "contactPage" ? "" : ""
+                } text-white portrait:hover:text-2xl hover-underline-animation  cursor-pointer px-2 rounded-md h-10 flex  items-center w-fit portrait:font-bold`}
+              >
                 <Link
                   to="contact"
                   spy={true}
                   smooth={true}
                   offset={-100}
                   duration={500}
-                  onClick={closeMenu}
+                  onClick={handleClick}
+                  className="contactPage"
                 >
                   Contact
                 </Link>
@@ -146,57 +175,3 @@ export default function Navbar() {
 //https://anuraghazra.dev/#creative-coding
 
 //animate-bounce
-
-/*
-
- <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0 text-lg ">
-              <li className="text-white portrait:hover:text-2xl hover-underline-animation  cursor-pointer px-2 rounded-md h-10 flex  items-center w-fit portrait:font-bold">
-                <Link
-                  to="about"
-                  spy={true}
-                  smooth={true}
-                  offset={-100}
-                  duration={500}
-                  onClick={closeMenu}
-                >
-                  About
-                </Link>
-              </li>
-              <li className="text-white portrait:hover:text-2xl hover-underline-animation cursor-pointer px-2 rounded-md h-10 flex  items-center w-fit portrait:font-bold">
-                <Link
-                  to="skills"
-                  spy={true}
-                  smooth={true}
-                  offset={-100}
-                  duration={500}
-                  onClick={closeMenu}
-                >
-                  Skills
-                </Link>
-              </li>
-              <li className="text-white portrait:hover:text-2xl hover-underline-animation cursor-pointer px-2 rounded-md h-10 flex  items-center w-fit portrait:font-bold">
-                <Link
-                  to="projects"
-                  spy={true}
-                  smooth={true}
-                  offset={-100}
-                  duration={500}
-                  onClick={closeMenu}
-                >
-                  Projects
-                </Link>
-              </li>
-              <li className="text-white portrait:hover:text-2xl hover-underline-animation cursor-pointer px-2 rounded-md h-10 flex  items-center w-fit portrait:font-bold">
-                <Link
-                  to="contact"
-                  spy={true}
-                  smooth={true}
-                  offset={-100}
-                  duration={500}
-                  onClick={closeMenu}
-                >
-                  Contact
-                </Link>
-              </li>
-            </ul>
-*/
