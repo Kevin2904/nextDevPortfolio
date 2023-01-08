@@ -12,7 +12,7 @@ import Navbar from "./shared/navbar";
 import Splash from "./shared/splash";
 
 export default function Home() {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [windowState, setWindowState] = useState(undefined);
   useEffect(() => {
     console.log(loading);
