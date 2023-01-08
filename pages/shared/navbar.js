@@ -14,10 +14,10 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="w-full  bg-blue-900  border-b-2 border-[#2196f3] fixed top-0  z-50 ">
+    <nav className="w-full  bg-blue-900 h-fit  border-b-2 border-[#2196f3] fixed top-0  z-50 ">
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
-          <div className="flex items-center justify-between py-3 md:py-5 md:block cursor-pointer  ">
+          <div className="flex items-center justify-between  py-2 md:block cursor-pointer  ">
             <div className="page-logo">
               <Link
                 to="about"
@@ -29,7 +29,7 @@ export default function Navbar() {
               >
                 <img
                   src="/assets/icons/pageIco.png"
-                  className="aboutPageIcon"
+                  className="aboutPageIcon w-10"
                 ></img>
               </Link>
             </div>
@@ -84,13 +84,13 @@ export default function Navbar() {
           }`}
         >
           <div
-            className={`flex-1 justify-self-center   md:block md:pb-0 md:mt-0 xl:overflow-visible lg:overflow-visible md:overflow-hidden sm:overflow-hidden overflow-hidden   ${
+            className={`flex-1 justify-self-center   md:block md:pb-0 md:mt-0 xl:overflow-visible lg:overflow-visible md:overflow-visible sm:overflow-hidden overflow-hidden   ${
               navbar
-                ? " transition-height duration-1000 ease-in-out portrait:h-64 "
+                ? " transition-height duration-1000 ease-in-out portrait:h-64 portrait:mt-10 "
                 : "transition-height duration-1000 ease-in-out h-0"
             }`}
           >
-            <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0 text-lg">
+            <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0 text-base leading-3 -mt-3">
               <li
                 className={` ${
                   current == "aboutPage" || current == "aboutPageIcon" ? "" : ""
