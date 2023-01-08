@@ -14,7 +14,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="w-full  bg-blue-900   fixed top-0  z-50 ">
+    <nav className="w-full  bg-blue-900  border-b-2 border-[#2196f3] fixed top-0  z-50 ">
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block cursor-pointer  ">

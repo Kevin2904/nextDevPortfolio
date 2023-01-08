@@ -45,7 +45,7 @@ export default function Home() {
       ) : (
         <>
           <Navbar />
-          <main className="w-full h-full pt-20">
+          <main className="w-full h-full ">
             <About />
             <Skills />
             <Projects />
@@ -58,11 +58,3 @@ export default function Home() {
     </div>
   );
 }
-
-/*
-
-<>
-          {" "}
-         
-        </>
-*/

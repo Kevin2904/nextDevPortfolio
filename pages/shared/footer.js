@@ -7,7 +7,7 @@ export default function Footer() {
         <img src="/assets/icons/pageIco.png"></img>
       </div>
       <div className=" flex flex-col justify-center items-center xl:mt-0 lg:mt-0 md:mt-0 sm:mt-5 mt-5">
-        <p className=" text-white font-bold">
+        <p className=" text-white font-bold xl:px-0 lg:px-0 md:px-28 sm:px-28 px-28 text-center">
           Made with <span className=" text-[#2196f3]">NextJS</span> by Kevin
           Herrera López
         </p>

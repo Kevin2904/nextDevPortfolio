@@ -78,18 +78,21 @@ export default function Projects() {
     <div
       id="projects"
       className={`${
-        showMore ? " h-[1200px]" : " h-[690px]"
-      } bg-[#072966]  w-full justify-center items-center flex overflow-hidden transition-height duration-1000 ease-in-out relative`}
+        showMore ? " h-fit" : " h-fit"
+      } bg-black  w-full justify-center items-center flex overflow-hidden transition-height duration-1000 ease-in-out relative`}
     >
-      <div className=" absolute top-0 py-10">
+      <div className=" mt-40">
         <div className=" w-full flex justify-center items-center text-white text-2xl font-bold">
           <h1 className=" text-white text-5xl  font-bold">Projects</h1>
         </div>
-        <img
-          src="assets/images/astronaut.png"
-          className=" w-[340px] h-[350px] -rotate-[20deg] absolute top-0 right-0 mr-10 mt-5 z-10 "
-        ></img>
-        <div className="grid grid-cols-4 gap-10 py-40 h-fit  rounded-md px-5 mt-10 relative">
+        <div className="object">
+          <img
+            src="assets/images/astronaut.png"
+            className=" xl:w-[340px] lg:w-[340px] md:w-[250px] sm:w-[250px] w-[250px] xl:h-[350px] lg:h-[350px] md:h-[260px] sm:h-[260px] h-[260px] xl:-rotate-[20deg] lg:-rotate-[20deg] md:rotate-[50deg] sm:-rotate-[20deg] -rotate-[60deg] absolute top-0 right-0 mr-10 xl:-mt-20 lg:-mt-20 md:-mt-10 sm:mt-5 mt-10 z-10 "
+          ></img>
+        </div>
+
+        <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 grid-cols-1  gap-10 py-40 h-fit  rounded-md px-5 mt-10 relative">
           {videos.map((resp, i) => {
             return (
               <div
@@ -108,9 +111,9 @@ export default function Projects() {
                     <div className="font-bold text-xl mb-2 text-white">
                       {resp.name}
                     </div>
-                    <p className="text-white text-base">{resp.description}</p>
+                    <p className="text-white text-sm">{resp.description}</p>
                   </div>
-                  <div className="px-6 absolute bottom-0 mb-2">
+                  <div className="px-6 absolute bottom-0 mb-2 whitespace-nowrap">
                     {resp?.tech?.map((tag, i) => {
                       return (
                         <span

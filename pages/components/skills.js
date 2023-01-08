@@ -60,14 +60,14 @@ export default function Skills() {
   return (
     <div
       id="skills"
-      className=" w-full h-fit bg-[#072966] flex flex-col  items-center pt-10 relative "
+      className=" w-full h-fit bg-black flex flex-col  items-center pt-10 relative "
     >
       <h1 className=" text-white text-5xl  font-bold">Skills</h1>
 
       <SkillsSlider />
 
       <div className=" flex flex-col justify-center items-center w-full mt-10">
-        <div className="relative grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 grid-cols-1 w-full h-fit gap-10 xl:px-[20vw] lg:px-[100px] md:px-[18vw] sm:px-[100px]">
+        <div className="relative grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 grid-cols-1 w-full h-fit xl:gap-10 lg:gap-10 md:gap-20 sm:gap-14 gap-14 xl:px-[20vw] lg:px-[100px] md:px-[18vw] sm:px-[100px]">
           <SkillsCard content={frontSkills} />
           <SkillsCard content={backSkills} />
         </div>
@@ -77,7 +77,7 @@ export default function Skills() {
         <h2 className=" text-white text-5xl  font-bold">My latest teams</h2>
 
         <div className=" flex flex-col justify-center items-center w-full mt-10">
-          <div className="relative grid grid-cols-3 w-fit h-fit gap-5 ">
+          <div className="relative grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 grid-cols-1 w-fit h-fit gap-5 ">
             <TeamCard
               company="Consulting Group"
               work="Service Desk Engineer Intern, code bug fixes, new features development and direct interaction with different customers."

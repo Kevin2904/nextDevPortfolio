@@ -18,37 +18,31 @@ export default function About(props) {
   return (
     <div
       id="about"
-      className=" w-full h-screen  justify-center items-center flex bg-gradient-to-b from-[#1f3a8a] to-[#02072f] flex-row relative"
+      className=" w-full h-fit justify-center items-center flex bg-black flex-row relative pt-60 pb-20"
       ref={reference}
     >
-      <div className=" fixed flex justify-center items-center w-full h-full object-cover   bg-slate-500">
-        <img
-          src="/assets/images/background.jpg"
-          className=" w-full h-full object-cover relative"
-        ></img>
-        <div className=" w-full flex justify-center items-center xl:flex-row lg:flex-row md:flex-row sm:flex-col flex-col xl:-mt-0 lg:-mt-0 md:-mt-0 sm:-mt-40 -mt-40  h-[400px] absolute ">
-          <div className="about  w-fit px-10 xl:py-5 lg:py-5 md:pt-5 sm:pt-5 pt-5 flex flex-col gap-5">
+      <div className="  flex justify-center items-center w-full h-full    ">
+        <div className=" w-full flex justify-center items-center xl:flex-row lg:flex-row md:flex-row sm:flex-col flex-col   relative ">
+          <div className="about  w-fit px-10 flex flex-col gap-5">
             <div className=" relative">
               <div className=" w-fit h-fit rounded-full relative ">
                 <img
                   src="assets/images/graph.png"
                   alt="Avatar Kevin Herrera"
-                  className=" xl:w-[400px] lg:w-[400px] md:w-[280px] sm:w-[280px] w-[220px] xl:h-[400px] lg:h-[400px] md:h-[280px] sm:h-[280px] h-[230px] "
+                  className=" xl:w-[400px] lg:w-[400px] md:w-[280px] sm:w-[280px] w-[320px] xl:h-[400px] lg:h-[400px] md:h-[280px] sm:h-[280px] h-[330px] "
                 ></img>
               </div>
               <div className=" w-fit h-fit rounded-full absolute top-0 xl:mt-20 lg:mt-20 md:mt-16 sm:mt-16 mt-14 xl:ml-20 lg:ml-20 md:ml-20 sm:ml-20 ml-14 ">
                 <img
-                  onMouseEnter={handleAvatar}
-                  onMouseOut={handleAvatar}
-                  src={avatar}
+                  src="assets/images/avatar3d.png"
                   alt="Avatar Kevin Herrera"
-                  className=" xl:w-[300px] lg:w-[300px] md:w-[200px] sm:w-[200px] w-[170px] xl:h-[300px] lg:h-[300px] md:h-[200px] sm:h-[200px] h-[170px]  rounded-full cursor-pointer shadow-xl shadow-blue-500/50"
+                  className=" xl:w-[300px] lg:w-[300px] md:w-[200px] sm:w-[200px] w-[270px] xl:h-[300px] lg:h-[300px] md:h-[200px] sm:h-[200px] h-[270px]  rounded-full cursor-pointer "
                 ></img>
               </div>
             </div>
             <div className="xl:mb-20 lg:mb-20 md:mb-0 sm:mb-0 mb-0">
               <div className=" text-white w-full flex flex-col justify-center items-center font-bold">
-                <p className="2xl:text-2xl lg:text-2xl md:text-2xl sm:text-xl text-lg text-center">
+                <p className="2xl:text-2xl lg:text-2xl md:text-2xl sm:text-xl text-xl text-center">
                   Kevin Herrera López
                 </p>
                 <p className=" xl:text-lg lg:text-lg md:text-lg sm:text-base text-sm text-center">
@@ -60,11 +54,8 @@ export default function About(props) {
 
           <div className="title text-white gap-5 w-fit px-10 xl:py-5 lg:py-5 md:py-0 sm:py-0 py-0 flex flex-col">
             <div>
-              <h1 className="xl:text-5xl lg:text-4xl md:text-3x sm:text-3xl text-2xl font-bold xl:block lg:block md:block sm:hidden hidden">
+              <h1 className="text-5xl  font-bold ">
                 Hi there! <br /> Welcome to <br /> my portfolio.
-              </h1>
-              <h1 className="xl:text-5xl lg:text-4xl md:text-3x sm:text-2xl text-xl font-bold xl:hidden lg:hidden md:hidden sm:block block">
-                Hi there! <br /> Welcome to my portfolio.
               </h1>
             </div>
             <div className=" border-sky-500 border-l-4 xl:w-[500px] lg:w-[400px] md:w-[350px] sm:w-fit w-fit  pl-2">
@@ -102,6 +93,19 @@ export default function About(props) {
 }
 
 /*
+
+  <MouseParallaxContainer globalFactorX={0.5} globalFactorY={0.5}>
+            <MouseParallaxChild
+              factorX={0.2}
+              factorY={0.5}
+            >
+
+
+              
+            </MouseParallaxChild>
+          </MouseParallaxContainer>
+
+          
  <MouseParallaxContainer globalFactorX={0.5} globalFactorY={0.5}>
           <MouseParallaxChild factorX={0} factorY={0.5}>
             <img
