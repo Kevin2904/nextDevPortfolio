@@ -86,7 +86,7 @@ export default function Navbar() {
           <div
             className={`flex-1 justify-self-center   md:block md:pb-0 md:mt-0 xl:overflow-visible lg:overflow-visible md:overflow-visible sm:overflow-hidden overflow-hidden   ${
               navbar
-                ? " transition-height duration-1000 ease-in-out portrait:h-64 portrait:mt-10 "
+                ? " transition-height duration-1000 ease-in-out portrait:h-64 portrait:mt-11 "
                 : "transition-height duration-1000 ease-in-out h-0"
             }`}
           >
