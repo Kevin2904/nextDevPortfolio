@@ -88,6 +88,12 @@ export default function Contact() {
             email: "",
             message: "",
           });
+        } else {
+          setEmailSent({
+            icon: "/assets/icons/error.png",
+            title: "Ooops!",
+            text: "Something went wrong, please try again.",
+          });
         }
       } catch (err) {
         setEmailSent({

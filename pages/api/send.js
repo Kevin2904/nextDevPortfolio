@@ -6,7 +6,7 @@ export default async function handler(req, res) {
   const { name, email, message } = req.body;
   console.log(name, email, message);
   const msg = {
-    to: "kevinhldev@gmail.com", // Change to your recipient
+    to: "kevinhl_2998@hotmail.com", // Change to your recipient
     from: "kevinhldev@gmail.com", // Change to your verified sender
     subject: "Contact",
     html: `<p><strong>name: </strong>${name}</p>
